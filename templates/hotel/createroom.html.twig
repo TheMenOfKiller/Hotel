@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hotel 5{% endblock %}
+
+{% block body %}
+
+    <h1>Création Chambre</h1>
+    <form>
+        <label>Numéro :</label><input id="num" name="num"><br>
+        <label>Etage :</label><input id="eta" name="eta"><br>
+        <p>Etat de la chambre : Libre (par défaut)</p>
+    <input type="submit" id="submit" name="submit" value="Envoyer">
+
+    </form>
+    <br/>
+    <br/>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Hotel{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a href="#">Hotel</a>
+        <button type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span ></span>
+        </button>
+
+        <div>
+            <ul>
+                <li>
+                    <a href="/hotel">Accueil
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/manager">Chambres</a>
+                </li>
+
+                {% if app.user.roles[0] == "ROLE_MANAGER" %}
+                    <li>
+                        <a href="/createroom">ChambreCreate</a>
+                    </li>
+                    <li>
+                        <a href="/employermanage">Employer</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
